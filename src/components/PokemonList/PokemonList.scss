@@ -16,8 +16,8 @@
         grid-gap: 20px 10px;
         height: 460px;
         width: 99%;
-        overflow: auto;
-    
+        overflow-y: auto;
+        overflow-x: hidden;
         &::-webkit-scrollbar {
             width: 10px;
           }
@@ -37,6 +37,10 @@
           /* Handle on hover */
         &::-webkit-scrollbar-thumb:hover {
             background: rgb(116, 1, 1);
+        }
+        a {
+            text-decoration: none;
+            color: black;
         }
     }
 }

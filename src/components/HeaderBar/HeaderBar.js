@@ -9,7 +9,7 @@ export function HeaderBar() {
                 <Link to="/pokemon">
                     <button>POKEMON</button>
                 </Link>
-                <Link to="/">
+                <Link to="/pokemon-profile">
                     <button>ITEMS</button>
                 </Link>
                 <Link to="/">

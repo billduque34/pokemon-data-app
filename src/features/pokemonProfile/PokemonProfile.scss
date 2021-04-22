@@ -1,0 +1,73 @@
+.PokemonProfile {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.815);
+    border-radius: 10px;
+    border: 3px solid black;
+    padding: 5px;
+    .inner-border {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        height: 100%;
+        border: 4px solid black;
+        border-radius: 8px;
+        padding: 6px;
+    }
+    .images-and-description {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        .poke-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            max-height: 220px;
+            .background-image {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                img {
+                    width: 100%;
+                }
+            }
+            .pokemon-gallery {
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 1px;
+                grid-row-gap: 5px;
+                max-height: 220px;
+                overflow: auto;
+                padding: 2px;
+                &::-webkit-scrollbar {
+                    width: 6px;
+                  }
+                  
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: rgba(107, 252, 107, 0.418);
+                    border-radius: 10px;
+                }
+                  
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(2, 63, 194, 0.616);
+                    border-radius: 10px;
+                }
+                  
+                  /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                    background: rgb(116, 1, 1);
+                }
+                img {
+                    width: 90px;
+                }
+            }
+        }
+    }
+    
+}

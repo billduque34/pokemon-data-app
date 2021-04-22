@@ -4,6 +4,7 @@ import { HomePage } from '../../components/HomePage/HomePage';
 import { MusicBar } from '../../components/MusicBar/MusicBar';
 import { PokemonList } from '../../components/PokemonList/PokemonList';
 import { PokemonTypeOptions } from '../../components/PokemonTypeOptions/PokemonTypeOptions';
+import { PokemonProfile } from '../../features/pokemonProfile/PokemonProfile';
 import './PokeDex.scss';
 
 export function PokeDex() {
@@ -41,6 +42,9 @@ export function PokeDex() {
                                     </Route>
                                     <Route path="/pokemon">
                                         <PokemonList/>
+                                    </Route>
+                                    <Route path="/pokemon-profile/:id">
+                                        <PokemonProfile/>
                                     </Route>
                                 </Switch>
                             </div>
