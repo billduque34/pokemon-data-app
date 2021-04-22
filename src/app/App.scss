@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;   
+}
+
+.App {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    background: {
+        color: rgb(25, 0, 252);
+        image: url('../resources/Images/background-image-pokeball.jpg');
+        repeat: repeat-x;
+        size: contain;
+    }
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(to top, rgba(207, 169, 1, 0.973), rgba(250, 204, 0, 0.932), rgba(194, 175, 1, 0.959));
+        top: 0;
+
+
+    }
+    // main {
+    //     height: 100%;
+    //     display: flex;
+    //     justify-content: center;
+    // }
+}

@@ -1,0 +1,15 @@
+.PokemonTypeOptions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px 20px;
+    button {
+        padding: 2px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            box-shadow: inset 0px 0px 1px black;
+            font-size: .79rem;
+        }
+    }
+}

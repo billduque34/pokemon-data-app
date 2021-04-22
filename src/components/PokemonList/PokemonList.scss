@@ -1,0 +1,42 @@
+.PokemonList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    img[alt=loading] {
+        width: 320px;
+        animation: 1.4s rotate infinite;
+        opacity: .84;
+    }
+    .pokemon-list {
+        box-sizing: border-box;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px 10px;
+        height: 460px;
+        width: 99%;
+        overflow: auto;
+    
+        &::-webkit-scrollbar {
+            width: 10px;
+          }
+          
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: rgba(107, 252, 107, 0.418);
+            border-radius: 10px;
+        }
+          
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: rgba(2, 63, 194, 0.616);
+            border-radius: 10px;
+        }
+          
+          /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgb(116, 1, 1);
+        }
+    }
+}
