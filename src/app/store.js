@@ -4,6 +4,7 @@ import pokemonProfileReducer from '../features/pokemonProfile/pokemonProfileSlic
 import storage from 'redux-persist/lib/storage'
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
+import thunk from "redux-thunk";
 
 const persistConfig = {
     key: 'root',
@@ -18,7 +19,9 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export let store = configureStore({
-    reducer: persistedReducer
+    reducer: persistedReducer,
+    devTools: process.env.NODE_ENV !== 'production',
+    middleware: [thunk]
 });
 
 export let persistor = persistStore(store);
