@@ -12,7 +12,7 @@ export function PokemonProfile() {
     const dispatch = useDispatch();
     const [pokeId, setPokeId] = useState();
 
-    const loadingSpecies = useSelector(state => state.species.isLoadingSpecies);
+    const errorSpecies = useSelector(state => state.species.hasErrorSpecies);
 
     useEffect(() => {
         dispatch(fetchSpecies(pokemonProfile.name));
@@ -31,8 +31,8 @@ export function PokemonProfile() {
         }
     }, [pokemonProfile]);
 
-    if(loadingSpecies) {
-        return <></>;
+    if(errorSpecies) {
+        return <h1>Data Not Found!</h1>;
     }
 
     return (<div className="PokemonProfile">
@@ -60,6 +60,7 @@ export function PokemonProfile() {
                             <div className="evolution">
                                 <div className="evo">
                                     <p>{species.generation}</p>
+
                                 </div>
                                 <p>{species.text}</p>
                             </div>

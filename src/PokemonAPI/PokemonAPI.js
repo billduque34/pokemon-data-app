@@ -24,8 +24,9 @@ export async function getPokemonByType(name) {
 export async function getSpecies(name) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${name}/`);
     const jsonResponse = await response.json();
+    console.log(jsonResponse);
     return {
         generation: jsonResponse.generation.name.toUpperCase(),
-        text: (jsonResponse.flavor_text_entries[0].flavor_text + ' ' + jsonResponse.flavor_text_entries[1].flavor_text).replace(/[^a-zA-Z. ]/g, " ")
+        text: jsonResponse.flavor_text_entries ? (jsonResponse.flavor_text_entries[0].flavor_text + ' ' + jsonResponse.flavor_text_entries[1].flavor_text).replace(/[^a-zA-Z. ]/g, " ") : ''
     };
 }
