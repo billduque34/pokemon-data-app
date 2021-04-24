@@ -2,15 +2,15 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: rgb(232, 242, 250);
+    background-color: rgba(255, 255, 255, 0.795);
     border-radius: 10px;
-    box-shadow: 0px 0px 5px rgb(25, 1, 82);
-    border: 4px solid rgba(221, 221, 221, 0.76);
+    border: 2px solid rgb(0, 0, 0);
     padding: 5px;
     .inner-border {
         box-sizing: border-box;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
         width: 100%;
         height: 100%;
         border-radius: 8px;
@@ -20,14 +20,16 @@
         box-sizing: border-box;
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .poke-images {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             max-height: 220px;
-            box-shadow: 0px 0px 5px rgb(25, 1, 82);
             border-radius: 10px;
             overflow: hidden;
-            border: 4px solid rgba(3, 128, 167, 0.164);
+            border: 2px solid rgb(0, 0, 0);
             .background-image {
                 position: relative;
                 z-index: 2;
@@ -35,8 +37,6 @@
                 height: 100%;
                 display: flex;
                 align-items: center;
-                background: linear-gradient(to top, rgb(170, 182, 248), rgb(174, 174, 250));
-                box-shadow: 0px 0px 8px rgb(25, 1, 82);
                 img {
                     width: 100%;
                 }
@@ -51,13 +51,14 @@
                 max-height: 220px;
                 overflow: auto;
                 padding: 2px;
-                background-color: rgb(98, 171, 255);
+                background-color: rgba(228, 227, 227, 0.76);
                 background-size: cover;
+                border-left: 2px solid rgb(0, 0, 0);
                 img {
                     width: 90px;
-                    box-shadow: 0px 0px 5px rgb(25, 1, 82);
-                    background-color: rgb(167, 195, 248);
-                    
+                    border: 2px solid rgb(0, 0, 0);
+                    border-radius: 10px;
+                    background-color: rgb(255, 255, 255);
                 }
                 &::-webkit-scrollbar {
                     width: 6px;
@@ -65,22 +66,88 @@
                   
                 /* Track */
                 &::-webkit-scrollbar-track {
-                    background: rgba(107, 252, 107, 0.418);
+                    background: rgb(255, 255, 255);
                     border-radius: 10px;
                 }
                   
                 /* Handle */
                 &::-webkit-scrollbar-thumb {
-                    background: rgba(2, 63, 194, 0.616);
+                    background: rgb(0, 0, 0);
                     border-radius: 10px;
                 }
                   
                   /* Handle on hover */
                 &::-webkit-scrollbar-thumb:hover {
-                    background: rgb(116, 1, 1);
+                    background: rgb(175, 175, 175);
+                }
+            }
+        }
+        .poke-description {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 40%;
+            .id-and-name {
+                display: flex;
+                align-items: center;
+                background-color: white;
+                width: 65%;
+                border-radius: 20px;
+                padding: 5px 10px;
+                border: 2px solid black;
+                margin-bottom: 5px;
+                .poke-id {
+                    padding: 3px 8px;
+                    border-radius: 10px;
+                    background-color: black;
+                    margin-right: 15px;
+                    p {
+                        font-family: 'PokemonGB';
+                        font-weight: bold;
+                        color: white;
+                    }
+                }
+                .poke-name {
+                    p {
+                        font-weight: bold;
+                        font-family: 'PokemonGB';
+                        font-size: .7rem;
+                    }
+                }
+            }
+            .evolution {
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                border: 2px solid #000000;
+                padding: 5px 10px;
+                p {
+                    font-family: 'PokemonGB';
+                    font-size: 0.55rem;
+                    color: rgb(0, 0, 0);
+                    line-height: 1rem;
+                }
+                .evo {
+                    display: inline-block;
+                    border-radius: 20px;
+                    background-color: black;
+                    padding: 6px 10px;
+                    margin-bottom: 6px;
+                    p {
+                        font-family: 'PokemonGB';
+                        font-size: 0.7rem;
+                        font-weight: bold;
+                        color: white;
+                    }
                 }
             }
         }
     }
-    
+    .poke-infos {
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
 }

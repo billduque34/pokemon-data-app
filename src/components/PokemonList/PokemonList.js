@@ -8,17 +8,17 @@ import './PokemonList.scss';
 export function PokemonList() {
     const pokemon = useSelector(selectPokemon);
     const isLoadingPokemon = useSelector(state => state.pokemon.isPokemonLoading);
+    
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('Run');
         dispatch(fetchPokemon());
     }, [dispatch]);
 
     return (<div className="PokemonList">
                 {isLoadingPokemon ? <img src="./images/pokeball-for-loading.png" alt="loading"/> : <div className="pokemon-list">
                     {pokemon.map(element => <Link to={`/pokemon-profile/${element.id}`} key={element.id}>
-                                                <PokemonCard pokemon={element} key={element.id}/>
+                                                <PokemonCard pokemon={element} key={element.id} />
                                             </Link>)}
                 </div>}
             </div>);

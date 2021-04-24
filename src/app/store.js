@@ -1,27 +1,13 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import pokemonReducer from '../features/pokemon/pokemonSlice';
 import pokemonProfileReducer from '../features/pokemonProfile/pokemonProfileSlice';
-import storage from 'redux-persist/lib/storage'
-import persistReducer from "redux-persist/es/persistReducer";
-import persistStore from "redux-persist/es/persistStore";
-import thunk from "redux-thunk";
+import speciesReducer from '../features/species/speciesSlice';
 
-const persistConfig = {
-    key: 'root',
-    storage
-}
-
-const rootReducer = combineReducers({
+export const store = configureStore({
+    reducer: {
         pokemon: pokemonReducer,
-        pokemonProfile: pokemonProfileReducer
+        pokemonProfile: pokemonProfileReducer,
+        species: speciesReducer
+    } 
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-export let store = configureStore({
-    reducer: persistedReducer,
-    devTools: process.env.NODE_ENV !== 'production',
-    middleware: [thunk]
-});
-
-export let persistor = persistStore(store);
