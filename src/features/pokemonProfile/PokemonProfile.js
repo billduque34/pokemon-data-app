@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { PokemonProfileNav } from '../../components/PokemonProfileNav/PokemonProfileNav';
 import { fetchSpecies, selectSpecies } from '../species/speciesSlice';
 import './PokemonProfile.scss';
 import { selectPokemonProfile } from './pokemonProfileSlice';
@@ -11,6 +12,7 @@ export function PokemonProfile() {
 
     const dispatch = useDispatch();
     const [pokeId, setPokeId] = useState();
+    const [active, setActive] = useState('information');
 
     const errorSpecies = useSelector(state => state.species.hasErrorSpecies);
 
@@ -67,6 +69,12 @@ export function PokemonProfile() {
                         </div>
                     </div>
                     <div className="poke-infos">
+                        <PokemonProfileNav setActive={setActive}/>
+                        <div className="poke-info-screen">
+                            <p>{active.toUpperCase()}</p>
+                            <div className="poke-info-data">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>);
